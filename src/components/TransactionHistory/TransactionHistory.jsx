@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, Thead, Tbody, Tr, Th, Td } from './TransactionHistory.styled';
+import { Table, Thead, Tbody, Tr, Th } from './TransactionHistory.styled';
+import { TransactionItem } from './TransactionItem/TransactionItem';
 
 export const TransactionHistory = ({ transactions }) => {
   return (
@@ -12,13 +13,14 @@ export const TransactionHistory = ({ transactions }) => {
         </Tr>
       </Thead>
       <Tbody>
-        {transactions.map(({ id, type, amount, currency }, index) => (
-          <Tr key={id} isEven={index % 2 === 0}>
-            <Td>{type}</Td>
-            <Td>{amount}</Td>
-            <Td>{currency}</Td>
-          </Tr>
-        ))}
+        {transactions.map(({ id, type, amount, currency }, index) => {
+          return (
+            <TransactionItem
+              key={id}
+              item={{ type, amount, currency, index }}
+            />
+          );
+        })}
       </Tbody>
     </Table>
   );

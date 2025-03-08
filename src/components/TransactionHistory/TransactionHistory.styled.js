@@ -14,12 +14,7 @@ export const Tbody = styled.tbody`
 `;
 
 export const Tr = styled.tr`
-  background: ${({ isEven }) => (isEven ? '#f8f8f8' : '#ffffff')};
   transition: background 0.3s ease-in-out;
-
-  &:hover {
-    background: #e0f7fa;
-  }
 `;
 
 export const Thead = styled.thead`
@@ -32,12 +27,4 @@ export const Th = styled.th`
   padding: 12px;
   text-align: left;
   border-bottom: 2px solid #ddd;
-  background: rgb(8, 139, 165);
-`;
-
-export const Td = styled.td`
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  color: #333;
 `;
